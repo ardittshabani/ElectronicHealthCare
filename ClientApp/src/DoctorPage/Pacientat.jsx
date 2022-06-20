@@ -34,7 +34,7 @@ function Pacientat(props){
                             </tr>
                         </thead>
                         <tbody>
-                            {pacientat.map(pac => <Pacienti key={pac.pacientiId} id={pac.pacientiId} emri={pac.emri} mbiemri={pac.mbiemri} data_lindjes={dataLindjes}/>)}
+                            {pacientat.map(pac => <Pacienti key={pac.pacientiId} id={pac.pacientiId} emri={pac.emri} mbiemri={pac.mbiemri} data_lindjes='01/02/2002'/>)}
                         </tbody>
                     </table>                
                 </div>

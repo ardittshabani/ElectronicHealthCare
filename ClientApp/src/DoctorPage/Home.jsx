@@ -16,26 +16,26 @@ function Home(props){
                 <div className="container border w-50 h-100 mx-1 div-home">
                     <div className="container align-content-center">
                         <img src={Doctor} className="rounded-circle mx-auto d-block mt-2" width="100px" height="100px"/>
-                        <p className="text-black fs-4 mx-auto d-block my-0 text-center" >{props.emri} {props.mbiemri}</p>
-                        <p className="text-primary mx-auto d-block text-center my-0" >{props.id}</p>
+                        <p className="text-black fs-4 mx-auto d-block my-0 text-center" >John Simpson</p>
+                        <p className="text-primary mx-auto d-block text-center my-0" >2548-789-356</p>
                     </div>
                     <div className="container">
                         <p className="text-left mx-3 border-bottom flex-inline mb-2">Detajet</p>
                         <div className="container d-flex justify-content-between ">
                             <p className="ms-3">Mosha</p>
-                            <p className="me-3">{props.mosha}</p>
+                            <p className="me-3">58</p>
                         </div>
                         <div className="container d-flex justify-content-between ">
                             <p className="ms-3">Specializimi</p>
-                            <p className="me-3">{props.specializimi}</p>
+                            <p className="me-3">Internist</p>
                         </div>
                         <div className="container d-flex justify-content-between ">
                             <p className="ms-3">Email</p>
-                            <p className="me-3">{props.email}</p>
+                            <p className="me-3">john4@gmial.com</p>
                         </div>
                         <div className="container d-flex justify-content-between ">
                             <p className="ms-3">Telefoni</p>
-                            <p className="me-3">{props.telefoni}</p>
+                            <p className="me-3">+38344123456</p>
                         </div>
                     </div>
                 </div>
@@ -86,8 +86,10 @@ function Remind(){
         <>
         <div className="container px-1">
             <p>Today</p>
-            <Today foto={Chris} name="Aze" date="04/03/2022" time="14:30"/>
             <Today foto={Chris} name="Azem" date="04/03/2022" time="14:30"/>
+            <Today foto={Chris} name="Ardit" date="04/03/2022" time="15:30"/>
+            <Today foto={Chris} name="Mike" date="04/03/2022" time="16:00"/>
+            <Today foto={Chris} name="Brannan" date="04/03/2022" time="17:00"/>
         </div>
         </>
     );
