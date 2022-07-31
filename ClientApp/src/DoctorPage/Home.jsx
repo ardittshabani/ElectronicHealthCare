@@ -1,8 +1,9 @@
 import react from "react";
-import Chris from "../Asetet/xemi.jpg";
-import Puls from "../Asetet/heart-beat.png";
-import O2 from "../Asetet/oxygen-tank.png";
-import HeartBeat from "../Asetet/heart-rate.png";
+    import Chris from "../Asetet/xemi.jpg";
+import Remain from "../Asetet/remain.png";
+import Visited from "../Asetet/examination.png";
+import Cancel from "../Asetet/cancel.png";
+import Appointment_img from "../Asetet/appointment-medical.png"
 import Today from "../components/RemindMe";
 import Doctor from "../Asetet/doctor1.jpg"
 import {useState} from "react";
@@ -39,34 +40,9 @@ function Home(props){
                         </div>
                     </div>
                 </div>
-                <div id="cal-data" className="container border w-50 h-100 mx-1 div-home ">
-                    <div className="container-fluid h-25 my-3 d-flex" >
-                        <div id="span1" className=" span-elem d-flex align-items-center justify-content-center">
-                            <img  src={Puls} width='50px' height='50.px'></img>
-                        </div>
-                        <div >
-                            <p className="fw-bold my-0 mx-3 p-0">Heart Beat</p>
-                            <p className="fs-1 align-bottom my-0 mx-4 p-0 text-danger">90 b/s</p>
-                        </div>
-                    </div>
-                    <div className="container-fluid h-25 my-3 d-flex">
-                        <div id="span2" className=" span-elem d-flex align-items-center justify-content-center">
-                        <img  src={O2} width='50px' height='50.px'></img>
-                        </div>
-                        <div >
-                            <p className="fw-bold my-0 mx-3 p-0">Oxygen Percentage</p>
-                            <p className="fs-1 align-bottom my-0 mx-4 p-0 text-primary">105%</p>
-                        </div>
-                    </div>
-                    <div className="container-fluid h-25 my-3 d-flex">
-                        <div id="span3" className=" span-elem d-flex align-items-center justify-content-center">
-                        <img  src={HeartBeat} width='50px' height='50.px'></img>
-                        </div>
-                        <div >
-                            <p className="fw-bold my-0 mx-3 p-0">Blood Preasure </p>
-                            <p className="fs-1 align-bottom my-0 mx-4 p-0 text-danger">120/80</p>
-                        </div>
-                    </div>
+                <div id="cal-data" className="container border w-50 h-100 mx-1 div-home p-3">
+                   <CalcData foto1={Appointment_img} foto2={Visited} value1={9} value2={5} title1={"Total Appointments"} title2={"Visitet Patients"}/>
+                   <CalcData foto1={Cancel} foto2={Remain} value1={9} value2={5} title1={"Cancled"} title2={"Remaining Patients"}/>
                 </div>
            </div>
             <div className="container border w-100 ms-1 me-2 my-2 div-home d-block" style={{height:'49% '}}>
@@ -93,6 +69,33 @@ function Remind(){
         </div>
         </>
     );
+}
+
+function CalcData(props){
+    return(
+        <>
+        <div className="container  h-50 d-flex mt-2">
+            <CalcDataDivs foto={props.foto1} value={props.value1} title={props.title1}/>
+            <CalcDataDivs foto={props.foto2} value={props.value2} title={props.title2}/>
+        </div>
+        </>
+    );
+}
+
+function CalcDataDivs(props){
+    return (
+        <>
+        <div className="container  m-0 ">
+            <div className="container  m-0 d-flex justify-content-center align-items-center">
+            <img src={props.foto} className="mt-1" width="70px" height="70px"/>
+            </div>
+            <div className="container  d-flex align-content-center ps-4 ">
+                <p className="text-danger fs-1 fw-light m-1">{props.value}</p>
+                <p className="mt-4 ms-1 fs-6">{props.title}</p>
+            </div>
+        </div>
+        </>
+    )
 }
 
 
