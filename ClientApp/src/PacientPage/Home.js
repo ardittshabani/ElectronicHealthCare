@@ -4,6 +4,7 @@ import Puls from "../Asetet/heart-beat.png";
 import O2 from "../Asetet/oxygen-tank.png";
 import HeartBeat from "../Asetet/heart-rate.png";
 import Today from "../components/RemindMe";
+import Doctor from '../Asetet/doctor1.jpg';
 
 
 function Home(props){
@@ -14,7 +15,7 @@ function Home(props){
                 <div className="container border w-50 h-100 mx-1 div-home">
                     <div className="container align-content-center">
                         <img src={Chris} className="rounded-circle mx-auto d-block mt-2" width="100px" height="100px"/>
-                        <p className="text-black fs-4 mx-auto d-block my-0 text-center" >{props.Emri}</p>
+                        <p className="text-black fs-4 mx-auto d-block my-0 text-center" >Ardit Shabani</p>
                         <p className="text-primary mx-auto d-block text-center my-0" >457-88-95584-35</p>
                     </div>
                     <div className="container">
@@ -84,8 +85,8 @@ function Remind(){
         <>
         <div className="container px-1">
             <p>Today</p>
-            <Today foto={Chris} name="Aze" date="04/03/2022" time="14:30"/>
-            <Today foto={Chris} name="Azem" date="04/03/2022" time="14:30"/>
+            
+            <Today foto={Doctor} name="Dr. John Simpson" date="04/03/2022" time="14:30"/>
         </div>
         </>
     );

@@ -94,3 +94,12 @@ ul{
 .ter-div{
   --bs-bg-opacity: .6;
 }
+
+.div-termini{ 
+  width: 240px;
+  background-color: #44b88f6e;
+}
+
+.profil-photo{
+  border-radius: 100%;
+}

@@ -39,7 +39,7 @@ export default function DoctorPage () {
             </li>
             <li className='nav-item my-2 p-2'>
             <img src={Diag_img} width="30px" height="30px" className='mb-2'/>
-              <Link className='badge nav-link fs-4 fw-normal' to={{pathname: '/Pacientat', props:{id: 2044568}}} >Pacientat</Link>
+              <Link className='badge nav-link fs-4 fw-normal' to={'/Pacientat'} >Pacientat</Link>
             </li>
             <li className='nav-item my-2 p-2'>
             <img src={Lab_img} width="30px" height="30px" className='mb-2'/>
