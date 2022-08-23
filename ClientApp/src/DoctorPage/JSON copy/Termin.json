@@ -1,0 +1,370 @@
+[
+    {
+        "id": 1,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 2,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 3,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 4,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 5,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 6,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 7,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 8,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 9,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 10,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 11,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 12,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 13,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 14,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Canceled"
+    },
+    {
+        "id": 15,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Done"
+    },
+    {
+        "id": 16,
+        "pacienti":{
+            "id": 1,
+            "emri": "Donald",
+            "mbiemri": "Trump",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "donald.trump@gmail.com"
+        },
+        "doktori":{
+            "id": 1,
+            "emri": "John",
+            "mbiemri": "Smith",
+            "dataLindjes": "01/02/2002",
+            "nrTelefonit": "044123456",
+            "email": "john.smith@gmail.com"
+        },
+        "data": "08/07/2011",
+        "ora": "14:20",
+        "titulli": "Fewer",
+        "status": "Canceled"
+    }
+]

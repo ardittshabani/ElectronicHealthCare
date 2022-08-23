@@ -103,3 +103,34 @@ ul{
 .profil-photo{
   border-radius: 100%;
 }
+
+.termini-card{
+  width: 235px;
+  background-color: #0366d6d4;
+  text-align: center;
+  border-radius: 5%;
+}
+
+.termini-card:hover{
+  background-color: #0253b0;
+  width: 245px;
+}
+
+.scroll-table{
+  max-height: 550px;
+  overflow-x: scroll;
+}
+
+.div-terminat{
+  max-height: 550px;
+  overflow-x: scroll;
+}
+
+.scroll-form{
+  max-height: 590px;
+  overflow-x: scroll;
+}
+
+.scroll-form input{
+  font-size: larger;
+}

@@ -2,40 +2,72 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import AddPatients from "./Components/AddPatients.jsx"
+import PacientValue from "./JSON copy/PacientValue.json"
 
 function Pacientat(props){
-    const [pacientat, setPacientat] = useState([]);
+    const [pacientat, setPacientat] = useState(PacientValue);
 
-    useEffect(() => {
+    /*useEffect(() => {
         axios.get('https://localhost:7053/api/Pacientis').then(res =>{
             setPacientat(res.data)
         })
         .catch(error => {
             console.log(error);
         })
-    }, [])
+    }, [])*/
 
-    const [buttonPopup, setButtonPopup] = useState(false);
+    //Boolean variable determines if Add or Edit
+    const [editorAdd, setEditorAdd] = useState(true);
 
+    //Boolean varibale determines if Add or the list
+    const [AddPatientPage, setAddPatientPage] = useState(true);
+
+    //Boolean variable which determines DeletePopUp
     const [buttonDeletePopup, setbuttonDeletePopup] = useState(false);
 
-    const [buttonAddPopup, setbuttonAddPopup] = useState(false);
+    const [EditValue, setEditValue] = useState({
+        id: null,
+        emri: null,
+        mbiemri: null,
+        data_lindjes: null,
+        gjinia: null,
+        numri: null,
+        email: null,
+        adress: {
+            rruga: null,
+            city: null,
+            zipCode: null,
+        },
+        weight: null,   
+        height: null
+    })
 
-    const [editvalue, setEditvalue] = useState({
-        id: 'id',
-        emri: 'name',
-        mbiemri: 'surname',
-        data_lindjes: 'datalindjes'
-    });
-    return(
+    return(AddPatientPage)?(
         <>
         <div className="container  w-100 h-100 d-flex">
-            <div className="container border w-75 p-5 pe-2 pt-4">
-                <div className="container  h-100 p-2">
+            <div className="container p-5 pe-2 pt-4  w-75">
+                <div className="container  h-100 p-2 ">
                     <div className="container d-flex justify-content-between pe-3">
                         <p className="fs-5">My Patients</p>
-                        <button onClick={() => setbuttonAddPopup(true)} className="btn btn-sm btn-success px-2 mb-2">+ ADD PATIENT</button>
+                       <button onClick={() =>{ setAddPatientPage(false); setEditorAdd(true); setEditValue({
+                        id: null,
+                        emri: null,
+                        mbiemri: null,
+                        data_lindjes: null,
+                        gjinia: null,
+                        numri: null,
+                        email: null,
+                        adress: {
+                            rruga: null,
+                            city: null,
+                            zipCode: null,
+                        },
+                        weight: null,   
+                        height: null
+                       })}}  className="btn btn-lg btn-outline-success px-2 mb-2">+ ADD PATIENT</button>
                     </div>
+                    <div className="scroll-form">
                     <table className="table table-stripied table-light">
                         <thead>
                             <tr className="">
@@ -45,42 +77,50 @@ function Pacientat(props){
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody >
                             {pacientat.map(pac => 
-                            <Pacienti key={pac.pacientiId} 
-                            id={pac.pacientiId} emri={pac.emri} mbiemri={pac.mbiemri} data_lindjes='01/02/2002' 
+                            <Pacienti key={pac.id} 
+                            id={pac.id} emri={pac.emri} mbiemri={pac.mbiemri} data_lindjes={pac.dataLindjes} 
                             edit={() => {
-                                setButtonPopup(true);
-                                setEditvalue({
-                                    id: pac.pacientiId,
+                                setAddPatientPage(false);
+                                setEditValue({
+                                    id: pac.id,
                                     emri: pac.emri,
                                     mbiemri: pac.mbiemri,
-                                    data_lindjes: '01/02/2002'
-                                })
+                                    data_lindjes: pac.dataLindjes,
+                                    gjinia: pac.gjinia,
+                                    numri: pac.numri,
+                                    email: pac.email,
+                                    adress: {
+                                        rruga: pac.rruga,
+                                        city: pac.city,
+                                        zipCode: pac.zipCode,
+                                    },
+                                    weight: pac.weight,   
+                                    height: pac.height
+                                });
+                                setEditorAdd(false);
                             }}
                             delete={() => {
                                 setbuttonDeletePopup(true);
-                                setEditvalue({
-                                    emri: pac.emri,
-                                    mbiemri: pac.mbiemri
-                                })
                             }}
                             />)}
                         </tbody>
-                    </table>                
+                    </table>
+                    </div>                
                 </div>
             </div>
-            <EditPopup trigger={buttonPopup} close={() => setButtonPopup(false)} id={editvalue.id} emri={editvalue.emri} mbiemri={editvalue.mbiemri} data_lindjes={editvalue.data_lindjes}/>
-            <DeletePopup trigger={buttonDeletePopup} no={() => setbuttonDeletePopup(false)} emri={editvalue.emri} mbiemri={editvalue.mbiemri}/>
-            <AddPopup trigger={buttonAddPopup} close={() => setbuttonAddPopup(false)}/>
-            <div className="container border w-25 py-5 px-3 ">
-            </div>
-            
+            <DeletePopup trigger={buttonDeletePopup} no={() => setbuttonDeletePopup(false)}/>
         </div>
         </>
-    )
+    ):<AddPatients onclick={() => setAddPatientPage(true) } 
+        triger={!AddPatientPage}
+        value={EditValue}
+        h1={editorAdd}/>;
+
 }
 
+/**Simple Pacienti row of table */
 function Pacienti(props){ 
     return(
         <>
@@ -97,34 +137,7 @@ function Pacienti(props){
     )
 }
 
-function EditPopup(props){
-    
-    return (props.trigger) ? (
-        <>
-            <div className="container position-absolute d-flex justify-content-center start-50 top-50 translate-middle">
-                <div className="bg-secondary py-4 ps-5 pe-2 d-flex">
-                  <form > 
-                    <label className='d-block' htmlFor="">ID</label>
-                    <input className='d-block' type='ID'  disabled/>
-                    <label className='d-block' htmlFor="">Emri</label>
-                    <input className='d-block' type='Emri'/>
-                    <label className='d-block' htmlFor="">Mbiemri</label>
-                    <input className='d-block' type='Mbiemri'/>
-                    <label className='d-block' htmlFor="">DataLindjes</label>
-                    <input className='d-block' type='DataLindjes'/>
-                    <div className=" mt-2 d-flex justify-content-center">
-                        <button className="btn btn-sm btn-success mx-1">Submit</button>
-                    </div>
-                  </form>
-                  <div className="d-flex align-items-end">
-                    <button onClick={props.close} className="btn btn-sm btn-warning ms-2 p-1">Close</button>
-                  </div>
-                </div>
-            </div>
-        </>
-    ): "";
-}
-
+/*Delete Popup*/ 
 function DeletePopup(props){
     return(props.trigger) ? (
         <div className="container position-absolute d-flex justify-content-center start-50 top-50 translate-middle">
@@ -139,34 +152,5 @@ function DeletePopup(props){
             </div>
     ):"";
 }
-
-
-function AddPopup(props){
-    
-    return (props.trigger) ? (
-        <>
-            <div className="container position-absolute d-flex justify-content-center start-50 top-50 translate-middle">
-                <div className="bg-secondary py-4 ps-5 pe-2 d-flex">
-                  <form > 
-                    <label className='d-block' htmlFor="">Emri</label>
-                    <input className='d-block' type='Emri' value={props.emri}/>
-                    <label className='d-block' htmlFor="">Mbiemri</label>
-                    <input className='d-block' type='Mbiemri' value={props.mbiemri}/>
-                    <label className='d-block' htmlFor="">DataLindjes</label>
-                    <input className='d-block' type='DataLindjes' value={props.data_lindjes}/>
-                    <div className=" mt-2 d-flex justify-content-center">
-                        <button className="btn btn-sm btn-success mx-1">Submit</button>
-                    </div>
-                  </form>
-                  <div className="d-flex align-items-end">
-                    <button onClick={props.close} className="btn btn-sm btn-warning ms-2 p-1">Close</button>
-                  </div>
-                </div>
-            </div>
-        </>
-    ): "";
-}
-
-
 
 export default Pacientat;
