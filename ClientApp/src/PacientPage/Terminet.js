@@ -1,4 +1,3 @@
-import react from "react";
 import Azem from "../Asetet/xemi.jpg"
 import Done from "../Asetet/correct.png"
 import Canceled from "../Asetet/cancel.png"
@@ -13,16 +12,19 @@ import {
     Route,
     Link, 
     Switch} from 'react-router-dom';
+import NewTermin from "./Components/AddNewTermin";
 
 function Terminet(props){
 
-    return(
+    const [Trigger, setTrigger] = useState(true)
+
+    return(Trigger) ?(
         <>
         <div className="w-100 h-100 p-4" >
             <p className="fs-2">Terminet</p>
             <Router>
             <div className="container d-fl ">
-                <nav>
+                <nav className="d-flex justify-content-between">
                     <ul className="d-flex nav-tabs">
                         <li className="mx-3 nav-item">
                             <Link className="badge badge-secondary nav-link fs-4 fw-normal text-secondary" to={'/Today'}>This Month</Link>
@@ -31,6 +33,9 @@ function Terminet(props){
                             <Link className="badge nav-link fs-4 fw-normal" to={'/TerminAll'}>All</Link>
                         </li>
                     </ul>
+                    <div className="d-flex justify-content-end">
+                        <button className="btn btn-outline-danger btn-sm px-4 mb-3 me-3" onClick={()=> setTrigger(false)}>+ New Termin</button>
+                    </div>
                 </nav>
             </div>
             <div className="container scroll-table">
@@ -42,7 +47,7 @@ function Terminet(props){
             </Router>
         </div>
         </>
-    );
+    ):<NewTermin click={() => setTrigger(true)}/>
 }
 
 function TerminAll(props){

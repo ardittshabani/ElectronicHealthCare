@@ -1,0 +1,171 @@
+[
+    {
+        "id": 1,
+        "emri": "Internisti",
+        "mbiemri": "1",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Internist"
+    },
+    {
+        "id": 2,
+        "emri": "Internisti",
+        "mbiemri": "2",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Internist"
+    },
+    {
+        "id": 3,
+        "emri": "Internisti",
+        "mbiemri": "3",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Internist"
+    },
+    {
+        "id": 4,
+        "emri": "Internisti",
+        "mbiemri": "4",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Internist"
+    },
+    {
+        "id": 5,
+        "emri": "Ardit",
+        "mbiemri": "5",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Gynecologists"
+    },
+    {
+        "id": 6,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Gynecologists"
+    },
+    {
+        "id": 7,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Gynecologists"
+    },
+    {
+        "id": 8,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Gynecologists"
+    },
+    {
+        "id": 9,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Neurologists"
+    },
+    {
+        "id": 10,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Neurologists"
+    },
+    {
+        "id": 11,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Neurologists"
+    },
+    {
+        "id": 12,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Neurologists"
+    },
+    {
+        "id": 13,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Radiologists"
+    },
+    {
+        "id": 14,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Radiologists"
+    },
+    {
+        "id": 15,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Radiologists"
+    },
+    {
+        "id": 16,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Radiologists"
+    },
+    {
+        "id": 17,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Pediatricians"
+    },
+    {
+        "id": 18,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Pediatricians"
+    },
+    {
+        "id": 19,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Pediatricians"
+    },
+    {
+        "id": 20,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Pediatricians"
+    },
+    {
+        "id": 21,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Cardiologists"
+    },
+    {
+        "id": 22,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Cardiologists"
+    },
+    {
+        "id": 23,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Cardiologists"
+    },
+    {
+        "id": 24,
+        "emri": "Ardit",
+        "mbiemri": "Shabani",
+        "dataLindjes": "18/01/2002",
+        "specializimi": "Cardiologists"
+    }
+
+]
