@@ -7,6 +7,7 @@ import axios from "axios";
 import Time from "../Asetet/clock.png";
 import Data from "./JSON copy/Data.json";
 import TerminData from "./JSON copy/Termin.json"
+import {useParams} from "react-router-dom"
 import {
     BrowserRouter as Router,
     Routes, HashRouter,
@@ -15,6 +16,9 @@ import {
     Switch} from 'react-router-dom';
 
 function Terminet(props){
+
+    const {id} = useParams();
+
 
     return(
         <>
@@ -25,18 +29,18 @@ function Terminet(props){
                 <nav>
                     <ul className="d-flex nav-tabs">
                         <li className="mx-3 nav-item">
-                            <Link className="badge badge-secondary nav-link fs-4 fw-normal text-secondary" to={'/Today'}>Today</Link>
+                            <Link className="badge badge-secondary nav-link fs-4 fw-normal text-secondary" to={`/Today/${id}`}>Today</Link>
                         </li>
                         <li className="mx-3 nav-item">
-                            <Link className="badge nav-link fs-4 fw-normal" to={'/TerminAll'}>All</Link>
+                            <Link className="badge nav-link fs-4 fw-normal" to={`/TerminAll/${id}`}>All</Link>
                         </li>
                     </ul>
                 </nav>
             </div>
             <div className="container scroll-table">
                 <Switch>
-                    <Route exact path='/Today' component={Today } />
-                    <Route path='/TerminAll' component={TerminAll} />
+                    <Route exact path='/Today/:id' component={Today } />
+                    <Route path='/TerminAll/:id' component={TerminAll} />
                 </Switch>
             </div>
             </Router>
@@ -46,7 +50,14 @@ function Terminet(props){
 }
 
 function TerminAll(props){
+    const {id} = useParams();
+
     const [Terminet, setTerminet] = useState(TerminData);
+
+    useEffect(()=>{
+        
+    }, [])
+
     return (
         <>
         <table className="table">

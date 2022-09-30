@@ -134,3 +134,12 @@ ul{
 .scroll-form input{
   font-size: larger;
 }
+
+.form-floating-group input {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.login-div{
+  height: 600px;
+}

@@ -11,47 +11,47 @@ namespace ElectronicHealthCare.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PacientisController : ControllerBase
+    public class MjekusController : ControllerBase
     {
         private readonly EhrDbContext _context;
 
-        public PacientisController(EhrDbContext context)
+        public MjekusController(EhrDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Pacientis
+        // GET: api/Mjekus
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Pacienti>>> GetPacientis()
+        public async Task<ActionResult<IEnumerable<Mjeku>>> GetMjekus()
         {
-            return await _context.Pacientis.ToListAsync();
+            return await _context.Mjekus.ToListAsync();
         }
 
-        // GET: api/Pacientis/5
+        // GET: api/Mjekus/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Pacienti>> GetPacienti(int id)
+        public async Task<ActionResult<Mjeku>> GetMjeku(int id)
         {
-            var pacienti = await _context.Pacientis.FindAsync(id);
+            var mjeku = await _context.Mjekus.FindAsync(id);
 
-            if (pacienti == null)
+            if (mjeku == null)
             {
                 return NotFound();
             }
 
-            return pacienti;
+            return mjeku;
         }
 
-        // PUT: api/Pacientis/5
+        // PUT: api/Mjekus/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPacienti(int id, Pacienti pacienti)
+        public async Task<IActionResult> PutMjeku(int id, Mjeku mjeku)
         {
-            if (id != pacienti.PacientiId)
+            if (id != mjeku.MjekuId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(pacienti).State = EntityState.Modified;
+            _context.Entry(mjeku).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace ElectronicHealthCare.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PacientiExists(id))
+                if (!MjekuExists(id))
                 {
                     return NotFound();
                 }
@@ -72,19 +72,19 @@ namespace ElectronicHealthCare.Controllers
             return NoContent();
         }
 
-        // POST: api/Pacientis
+        // POST: api/Mjekus
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Pacienti>> PostPacienti(Pacienti pacienti)
+        public async Task<ActionResult<Mjeku>> PostMjeku(Mjeku mjeku)
         {
-            _context.Pacientis.Add(pacienti);
+            _context.Mjekus.Add(mjeku);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (PacientiExists(pacienti.PacientiId))
+                if (MjekuExists(mjeku.MjekuId))
                 {
                     return Conflict();
                 }
@@ -94,28 +94,28 @@ namespace ElectronicHealthCare.Controllers
                 }
             }
 
-            return CreatedAtAction("GetPacienti", new { id = pacienti.PacientiId }, pacienti);
+            return CreatedAtAction("GetMjeku", new { id = mjeku.MjekuId }, mjeku);
         }
 
-        // DELETE: api/Pacientis/5
+        // DELETE: api/Mjekus/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePacienti(int id)
+        public async Task<IActionResult> DeleteMjeku(int id)
         {
-            var pacienti = await _context.Pacientis.FindAsync(id);
-            if (pacienti == null)
+            var mjeku = await _context.Mjekus.FindAsync(id);
+            if (mjeku == null)
             {
                 return NotFound();
             }
 
-            _context.Pacientis.Remove(pacienti);
+            _context.Mjekus.Remove(mjeku);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool PacientiExists(int id)
+        private bool MjekuExists(int id)
         {
-            return _context.Pacientis.Any(e => e.PacientiId == id);
+            return _context.Mjekus.Any(e => e.MjekuId == id);
         }
     }
 }

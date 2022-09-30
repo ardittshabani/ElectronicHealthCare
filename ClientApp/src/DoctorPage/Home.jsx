@@ -6,10 +6,22 @@ import Cancel from "../Asetet/cancel.png";
 import Appointment_img from "../Asetet/appointment-medical.png"
 import Today from "../components/RemindMe";
 import Doctor from "../Asetet/doctor1.jpg"
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import {useParams} from "react-router-dom"
+import axios from "axios";
 
 
-function Home(props){
+function Home(){
+    const {id} = useParams();
+
+    const [mjeku, setMjeku] = useState({});
+
+    useEffect(()=>{
+        axios.get(`https://localhost:7053/api/Mjekus/${id}`).then((result)=>{
+            setMjeku(result.data);
+        });
+    },[])
+    
     return(
         <>
         <div id="p-data" className="container w-75 h-100  m-1 ">
@@ -17,7 +29,7 @@ function Home(props){
                 <div className="container border w-50 h-100 mx-1 div-home">
                     <div className="container align-content-center">
                         <img src={Doctor} className="rounded-circle mx-auto d-block mt-2" width="100px" height="100px"/>
-                        <p className="text-black fs-4 mx-auto d-block my-0 text-center" >John Simpson</p>
+                        <p className="text-black fs-4 mx-auto d-block my-0 text-center" ></p>
                         <p className="text-primary mx-auto d-block text-center my-0" >2548-789-356</p>
                     </div>
                     <div className="container">
@@ -28,15 +40,15 @@ function Home(props){
                         </div>
                         <div className="container d-flex justify-content-between ">
                             <p className="ms-3">Specializimi</p>
-                            <p className="me-3">Internist</p>
+                            <p className="me-3">{mjeku.specializimi}</p>
                         </div>
                         <div className="container d-flex justify-content-between ">
                             <p className="ms-3">Email</p>
-                            <p className="me-3">john4@gmial.com</p>
+                            <p className="me-3">{mjeku.email}</p>
                         </div>
                         <div className="container d-flex justify-content-between ">
                             <p className="ms-3">Telefoni</p>
-                            <p className="me-3">+38344123456</p>
+                            <p className="me-3">{mjeku.nrTelefonit}</p>
                         </div>
                     </div>
                 </div>
@@ -81,7 +93,7 @@ function CalcData(props){
         </>
     );
 }
-
+    
 function CalcDataDivs(props){
     return (
         <>
@@ -101,3 +113,4 @@ function CalcDataDivs(props){
 
 
 export default Home;
+

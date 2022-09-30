@@ -16,10 +16,9 @@ namespace ElectronicHealthCare.Models
         {
         }
 
-        public virtual DbSet<Diagnoza> Diagnozas { get; set; } = null!;
         public virtual DbSet<Mjeku> Mjekus { get; set; } = null!;
         public virtual DbSet<Pacienti> Pacientis { get; set; } = null!;
-        public virtual DbSet<Termini> Terminis { get; set; } = null!;
+        public virtual DbSet<Perdoruesi> Perdoruesis { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,90 +31,138 @@ namespace ElectronicHealthCare.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Diagnoza>(entity =>
-            {
-                entity.ToTable("Diagnoza");
-
-                entity.Property(e => e.DiagnozaId).HasColumnName("DiagnozaID");
-
-                entity.Property(e => e.MjekuId).HasColumnName("MjekuID");
-
-                entity.Property(e => e.PacientiId).HasColumnName("PacientiID");
-
-                entity.HasOne(d => d.Mjeku)
-                    .WithMany(p => p.DiagnozaMjekus)
-                    .HasForeignKey(d => d.MjekuId)
-                    .HasConstraintName("FK__Diagnoza__MjekuI__4D94879B");
-
-                entity.HasOne(d => d.Pacienti)
-                    .WithMany(p => p.DiagnozaPacientis)
-                    .HasForeignKey(d => d.PacientiId)
-                    .HasConstraintName("FK__Diagnoza__Pacien__4E88ABD4");
-            });
-
             modelBuilder.Entity<Mjeku>(entity =>
             {
                 entity.ToTable("Mjeku");
 
-                entity.Property(e => e.MjekuId).HasColumnName("MjekuID");
-
-                entity.Property(e => e.DataLindjes).HasColumnType("date");
+                entity.Property(e => e.MjekuId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("mjekuID");
 
                 entity.Property(e => e.Email)
                     .HasMaxLength(50)
-                    .IsUnicode(false);
+                    .IsUnicode(false)
+                    .HasColumnName("email");
 
                 entity.Property(e => e.Emri)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("emri");
+
+                entity.Property(e => e.Gjinia)
+                    .HasMaxLength(8)
+                    .IsUnicode(false)
+                    .HasColumnName("gjinia");
 
                 entity.Property(e => e.Mbiemri)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("mbiemri");
+
+                entity.Property(e => e.NrTelefonit).HasColumnName("nrTelefonit");
+
+                entity.Property(e => e.Qyteti)
                     .HasMaxLength(50)
-                    .IsUnicode(false);
+                    .IsUnicode(false)
+                    .HasColumnName("qyteti");
+
+                entity.Property(e => e.Rruga)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("rruga");
+
+                entity.Property(e => e.Specializimi)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("specializimi");
+
+                entity.Property(e => e.Statusi)
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("statusi");
+
+                entity.Property(e => e.ZipKodi).HasColumnName("zipKodi");
+
+                entity.HasOne(d => d.MjekuNavigation)
+                    .WithOne(p => p.Mjeku)
+                    .HasForeignKey<Mjeku>(d => d.MjekuId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__Mjeku__mjekuID__4CA06362");
             });
 
             modelBuilder.Entity<Pacienti>(entity =>
             {
                 entity.ToTable("Pacienti");
 
-                entity.Property(e => e.PacientiId).HasColumnName("PacientiID");
-
-                entity.Property(e => e.DataLindjes).HasColumnType("date");
+                entity.Property(e => e.PacientiId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("pacientiID");
 
                 entity.Property(e => e.Email)
                     .HasMaxLength(50)
-                    .IsUnicode(false);
+                    .IsUnicode(false)
+                    .HasColumnName("email");
 
                 entity.Property(e => e.Emri)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("emri");
+
+                entity.Property(e => e.Gjatesia).HasColumnName("gjatesia");
+
+                entity.Property(e => e.Gjinia)
+                    .HasMaxLength(8)
+                    .IsUnicode(false)
+                    .HasColumnName("gjinia");
+
+                entity.Property(e => e.GrupiGjakut)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("grupiGjakut");
 
                 entity.Property(e => e.Mbiemri)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("mbiemri");
+
+                entity.Property(e => e.NrTelefonit).HasColumnName("nrTelefonit");
+
+                entity.Property(e => e.Pesha).HasColumnName("pesha");
+
+                entity.Property(e => e.Qyteti)
                     .HasMaxLength(50)
-                    .IsUnicode(false);
+                    .IsUnicode(false)
+                    .HasColumnName("qyteti");
+
+                entity.Property(e => e.Rruga)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("rruga");
+
+                entity.Property(e => e.ZipKodi).HasColumnName("zipKodi");
+
+                entity.HasOne(d => d.PacientiNavigation)
+                    .WithOne(p => p.Pacienti)
+                    .HasForeignKey<Pacienti>(d => d.PacientiId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__Pacienti__pacien__48CFD27E");
             });
 
-            modelBuilder.Entity<Termini>(entity =>
+            modelBuilder.Entity<Perdoruesi>(entity =>
             {
-                entity.ToTable("Termini");
+                entity.ToTable("Perdoruesi");
 
-                entity.Property(e => e.TerminiId).HasColumnName("TerminiID");
+                entity.Property(e => e.PerdoruesiId).HasColumnName("perdoruesiID");
 
-                entity.Property(e => e.DataTerminit).HasColumnType("date");
+                entity.Property(e => e.Pasword)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("pasword");
 
-                entity.Property(e => e.MjekuId).HasColumnName("MjekuID");
-
-                entity.Property(e => e.PacientiId).HasColumnName("PacientiID");
-
-                entity.HasOne(d => d.Mjeku)
-                    .WithMany(p => p.TerminiMjekus)
-                    .HasForeignKey(d => d.MjekuId)
-                    .HasConstraintName("FK__Termini__MjekuID__5165187F");
-
-                entity.HasOne(d => d.Pacienti)
-                    .WithMany(p => p.TerminiPacientis)
-                    .HasForeignKey(d => d.PacientiId)
-                    .HasConstraintName("FK__Termini__Pacient__52593CB8");
+                entity.Property(e => e.Username)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("username");
             });
 
             OnModelCreatingPartial(modelBuilder);
